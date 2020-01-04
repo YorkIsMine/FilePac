@@ -9,11 +9,10 @@ public class CounterImpl implements Counter {
     @Override
     public long countSum(String content) throws Exception {
         ArrayList<Long> longs = new ArrayList<>();
-        String trimStr = content.replace(" ", "").trim();
+        String[] strArr = content.trim().split(" ");
 
-        for (int i = 0; i < trimStr.length(); i++) {
-            String oneStr = trimStr.substring(i, i + 1);
-            longs.add(Long.parseLong(oneStr));
+        for (int i = 0; i < strArr.length; i++) {
+            longs.add(Long.parseLong(strArr[i]));
         }
 
         long sum = 0;
