@@ -27,7 +27,7 @@ public class FileSumerImpl implements FileSumer {
                 sb.append(str);
                 sb.append("\n");
             }
-        } else throw new FileNotFoundException();
+        } else throw new FileNotFoundException("File not found");
 
 
         System.out.print("Sum of " + file.getName() + " is: ");

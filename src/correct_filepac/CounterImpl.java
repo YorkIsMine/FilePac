@@ -12,6 +12,8 @@ public class CounterImpl implements Counter {
         String[] strArr = content.trim().split(" ");
 
         for (int i = 0; i < strArr.length; i++) {
+            if (Long.parseLong(strArr[i]) > (Math.pow(2, 31) - 1))
+                throw new Exception("Number is too long");
             longs.add(Long.parseLong(strArr[i]));
         }
 

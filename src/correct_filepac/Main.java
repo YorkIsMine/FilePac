@@ -11,6 +11,6 @@ public class Main {
     public static void main(String[] args) throws Exception{
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         FilePac filePac = new FilePacImpl();
-        filePac.readAndGetSumOfFiles(new File(reader.readLine()));
+        System.out.println(filePac.readSumOfFilesInDirectory(new File(reader.readLine())));
     }
 }

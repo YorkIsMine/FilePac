@@ -11,7 +11,7 @@ import java.util.concurrent.Future;
 
 public class FilePacImpl implements FilePac {
     @Override
-    public String readAndGetSumOfFiles(File currentFile) throws Exception {
+    public long readSumOfFilesInDirectory(File currentFile) throws Exception {
 
         ExecutorService service = Executors.newCachedThreadPool();
         List<Future<Long>> futureControlSum = new ArrayList<>();
@@ -28,8 +28,8 @@ public class FilePacImpl implements FilePac {
         long controlSum = 0;
         for (Future<Long> fl : futureControlSum) controlSum += fl.get();
         System.out.println("_________________________________________________");
-        System.out.println("Sum of all files is: " + controlSum);
+        System.out.print("Sum of all files is: ");
 
-        return null;
+        return controlSum;
     }
 }
